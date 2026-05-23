@@ -15,7 +15,7 @@ class SensorProvider extends ChangeNotifier {
     this.ultra = 0,
   });
 
-  void updateData(double t, double h, int g, int s, u) {
+  void updateData(double t, double h, int g, int s, int u) {
     temp = t;
     humidity = h;
     gas = g;

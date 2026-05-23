@@ -121,13 +121,13 @@ class _BodyconnectionState extends State<Bodyconnection> {
 
     targetCharacteristic!.value.listen((value) {
       String data = String.fromCharCodes(value);
-      print("data.split()[0].split()[1] => ${data}");
+      print("data => ${data.split(",")[5].split("W:")[1]}");
       sensorProvider.updateData(
         double.parse(data.split(",")[0].split("T:")[1]),
         double.parse(data.split(",")[1].split("H:")[1]),
         int.parse(data.split(",")[2].split("G:")[1]),
         int.parse(data.split(",")[3].split("S:")[1]),
-        int.parse((data.split(",")[5].split("P:")[1])),
+        int.parse((data.split(",")[5].split("W:")[1])),
       );
       print("📡 Notify: $data");
     });
@@ -143,8 +143,6 @@ class _BodyconnectionState extends State<Bodyconnection> {
         ElevatedButton(
           onPressed: () async {
             bool granted = await AppPermissions.requestBluetoothPermissions();
-
-            print("granted => $granted");
 
             if (!granted) {
               print("❌ مفيش صلاحيات");
