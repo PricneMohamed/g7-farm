@@ -180,7 +180,7 @@ class _BodyconnectionState extends State<Bodyconnection> {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           ),
           child: Text(
-            "اعزق الان",
+            "ازرع الان",
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
